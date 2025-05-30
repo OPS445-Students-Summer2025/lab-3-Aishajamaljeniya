@@ -331,8 +331,8 @@ class lab3d(unittest.TestCase):
         stdout, err = p.communicate()
         try:
             error_output = 'wrong output (HINT: show root directory free space only)'
-            self.assertEqual(stdout.decode('utf-8').strip(), 
-                            lab3dStudent.free_space().decode('utf-8').strip(), msg=error_output)
+            self.assertEqual(stdout.decode('utf-8').strip(), lab3dStudent.free_space().strip(), msg=error_output)
+
         except AttributeError:
             error_output = 'did you already decode utf-8(HINT: you will need to do this later)'
             # If they already decoded the string an error will be raised this except fixes problem
